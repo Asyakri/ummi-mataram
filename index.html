@@ -1,117 +1,131 @@
-<!-- Replace the existing style section in the head with this -->
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Replace the existing style section in the head with this -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Favicon icon-->
-<link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
+    <!-- Favicon icon-->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/logos/favicon.png"
+    />
 
-<!-- Core Css -->
-<link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Core Css -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-<title>Ummi Mataram</title>
-<!-- Owl Carousel  -->
-<link rel="stylesheet" href="assets/libs/owl.carousel/dist/assets/owl.carousel.min.css" />
-<link rel="stylesheet" href="assets/libs/aos/dist/aos.css" />
+    <title>Ummi Mataram</title>
+    <!-- Owl Carousel  -->
+    <link
+      rel="stylesheet"
+      href="assets/libs/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="assets/libs/aos/dist/aos.css" />
 
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<style>
- 
-  #map {
-      height: 500px;
-      width: 100%;
-      z-index: 1; /* Lower z-index for map */
-  }
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+        z-index: 1; /* Lower z-index for map */
+      }
 
-  .header {
-      position: relative;
-      z-index: 1000; /* Higher z-index for header */
-  }
+      .header {
+        position: relative;
+        z-index: 1000; /* Higher z-index for header */
+      }
 
-  .navbar {
-      position: relative;
-      z-index: 1000; /* Higher z-index for navbar */
-  }
+      .navbar {
+        position: relative;
+        z-index: 1000; /* Higher z-index for navbar */
+      }
 
-  /* Add this to ensure dropdown menus appear above map */
-  .dropdown-menu {
-      z-index: 1001;
-  }
-    /* CSS yang sudah ada */
+      /* Add this to ensure dropdown menus appear above map */
+      .dropdown-menu {
+        z-index: 1001;
+      }
+      /* CSS yang sudah ada */
 
-    .sliding-wrapper {
-width: 100%;
-overflow: hidden;
-}
+      .sliding-wrapper {
+        width: 100%;
+        overflow: hidden;
+      }
 
-.slide-background {
-animation: scroll 40s linear infinite;
-}
+      .slide-background {
+        animation: scroll 40s linear infinite;
+      }
 
-.slide {
-min-width: 300px; 
-height: 300px;
-margin: 0 15px; 
-flex-shrink: 0; 
-}
+      .slide {
+        min-width: 300px;
+        height: 300px;
+        margin: 0 15px;
+        flex-shrink: 0;
+      }
 
-.slide img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-object-position: center;
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
 
-border-radius: 10px; 
-box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-}
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-@keyframes scroll {
-0% {
-    transform: translateX(0);
-}
-100% {
-    transform: translateX(-50%);
-}
-}
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 
-@media (max-width: 768px) {
-.slide {
-    min-width: 250px;
-    height: 250px;
-}
-}
+      @media (max-width: 768px) {
+        .slide {
+          min-width: 250px;
+          height: 250px;
+        }
+      }
 
-@media (max-width: 480px) {
-.slide {
-    min-width: 200px;
-    height: 200px;
-}
-}
-html {
-    scroll-behavior: smooth;
-}
+      @media (max-width: 480px) {
+        .slide {
+          min-width: 200px;
+          height: 200px;
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
 
-</style>
-
-</head>
-
-<body>
-<!-- Preloader -->
-<div class="preloader">
-    <img src="assets/images/logos/favicon.png" alt="loader" class="lds-ripple img-fluid" />
-</div>
-<div id="main-wrapper flex-column">
-    <header class="header">
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <img
+        src="assets/images/logos/favicon.png"
+        alt="loader"
+        class="lds-ripple img-fluid"
+      />
+    </div>
+    <div id="main-wrapper flex-column">
+      <header class="header">
         <nav class="navbar navbar-expand-lg py-0">
           <div class="container">
             <a class="navbar-brand me-0 py-0" href="main/index.html">
-              <img src="assets/images/logos/logo_ummi.png" 
-                   alt="logo" 
-                   class="img-fluid"
-                   style="max-height: 40px;" /> <!-- Tambahkan max-height -->
+              <img
+                src="assets/images/logos/logo_ummi.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-height: 40px"
+              />
+              <!-- Tambahkan max-height -->
             </a>
-            
+
             <button
               class="navbar-toggler border-0 p-0 shadow-none"
               type="button"
@@ -126,22 +140,24 @@ html {
               id="navbarSupportedContent"
             >
               <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
-               
-             
                 <li class="nav-item">
-                  <a class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
-                      aria-current="page"
-                      href="#trainer">
-                      Trainer
+                  <a
+                    class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
+                    aria-current="page"
+                    href="#trainer"
+                  >
+                    Trainer
                   </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
-                      aria-current="page"
-                      href="#infografis">
-                      Infografis
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
+                    aria-current="page"
+                    href="#infografis"
+                  >
+                    Infografis
                   </a>
-              </li>
+                </li>
               </ul>
             </div>
             <a
@@ -156,40 +172,39 @@ html {
       <div class="body-wrapper overflow-hidden pt-0">
         <section class="customizable-dashboard pt-5">
           <div class="container">
-            <div class="card  bg-dark rounded-1 position-relative mb-0">
+            <div class="card bg-dark rounded-1 position-relative mb-0">
               <div class="card-body">
-                
                 <div class="row justify-content-between align-items-center">
                   <div class="col-lg-7 col-xl-6 text-center text-lg-start">
                     <h2
                       class="fs-9 text-white text-center text-lg-start fw-bolder mb-3 lh-base"
                     >
-                     Selamat Datang di Halaman Ummi Mataram NTB
+                      Selamat Datang di Halaman Ummi Mataram NTB
                     </h2>
                     <p
                       class="text-white fs-5 d-flex align-items-center justify-content-center justify-content-lg-start gap-2 fw-light mb-7 pb-6"
                     >
-                     Jika ada pertanyaan, silahkan hubungi kami di
+                      Jika ada pertanyaan, silahkan hubungi kami di
                     </p>
                     <div
                       class="d-sm-flex align-items-center justify-content-center justify-content-lg-start gap-3 mb-4"
                     >
                       <a
-                      href="https://wa.me/6282339617793?text=Halo,%20salam%20kenal%20Ayoo%20Gabuung%20Bersama%20kamiiiiiii"
+                        href="https://wa.me/6282339617793?text=Halo,%20salam%20kenal%20Ayoo%20Gabuung%20Bersama%20kamiiiiiii"
                         target="_blank"
                         class="btn btn-primary rounded-pill d-block mb-3 mb-sm-0 btn-hover-shadow"
                         type="button"
-                        >
-                        <img src="assets/images/svgs/icon-phone.svg" alt="">
+                      >
+                        <img src="assets/images/svgs/icon-phone.svg" alt="" />
                         Ketua Ummi Mataram</a
                       >
                       <a
-                      href="https://wa.me/628980712554?text=Halo,%20salam%20kenal%20Ayoo%20Gabuung%20Bersama%20kamiiiiiii"
-                      target="_blank"
+                        href="https://wa.me/628980712554?text=Halo,%20salam%20kenal%20Ayoo%20Gabuung%20Bersama%20kamiiiiiii"
+                        target="_blank"
                         class="btn btn btn-outline-light d-block rounded-pill"
                         type="button"
-                        >
-                        <img src="assets/images/svgs/icon-phone.svg" alt="">
+                      >
+                        <img src="assets/images/svgs/icon-phone.svg" alt="" />
 
                         Manajer Training</a
                       >
@@ -200,142 +215,302 @@ html {
             </div>
           </div>
         </section>
-        <section class="hero-section bg-body-secondary position-relative overflow-hidden">
-          
+        <section
+          class="hero-section bg-body-secondary position-relative overflow-hidden"
+        >
           <div class="sliding-wrapper position-relative overflow-hidden py-5">
             <div class="slide-background d-flex flex-row w-100 gap-3 py-lg-7">
               <div class="slide">
-                <img
-                  src="asset/IMG-20220909-WA0004.jpg"
-                  alt="slide"
-                />
+                <img src="asset/IMG-20220909-WA0004.jpg" alt="slide" />
               </div>
               <div class="slide">
-                <img
-                  src="asset/IMG-20220910-WA0016.jpg"
-                  alt="slide"
-                />
+                <img src="asset/IMG-20220910-WA0016.jpg" alt="slide" />
               </div>
               <div class="slide">
-                <img
-                  src="asset/IMG20220911085741.jpg"
-                  alt="slide"
-                />
+                <img src="asset/IMG20220911085741.jpg" alt="slide" />
               </div>
               <div class="slide">
-                <img
-                  src="asset/IMG20220911134705.jpg"
-                  alt="slide"
-                />
+                <img src="asset/IMG20220911134705.jpg" alt="slide" />
               </div>
               <div class="slide">
-                <img
-                  src="asset/IMG20220911134715.jpg"
-                  alt="slide"
-                />
+                <img src="asset/IMG20220911134715.jpg" alt="slide" />
               </div>
               <div class="slide">
-                <img
-                  src="asset/IMG20220911140820.jpg"
-                  alt="slide"
-                />
+                <img src="asset/IMG20220911140820.jpg" alt="slide" />
               </div>
             </div>
           </div>
         </section>
-     
-      <section class="hero-section bg-body-secondary position-relative overflow-hidden" id="infografis">
-        <div class="container">
-          <h2 class="text-center mb-0 fs-9 fw-bolder aos-init aos-animate" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-            Infografis Pengguna Metode Ummi Lombok
-          </h2>
+
+        <section
+          class="hero-section bg-body-secondary position-relative overflow-hidden"
+          id="infografis"
+        >
+          <div class="container">
+            <h2
+              class="text-center mb-0 fs-9 fw-bolder aos-init aos-animate"
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              Infografis Pengguna Metode Ummi Lombok
+            </h2>
             <div class="row justify-content-center pt-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="map"></div> <!-- Map container -->
-                            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-                            <script>
-                                 var mapOptions = {
-                        center: [-8.636208883545168, 116.35985067565763],
-                        zoom: 11 // Menentukan tingkat zoom
-                    }
-
-                                var map = L.map('map', mapOptions);
-                                var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-                                map.addLayer(layer);
-
-                                // Function to add markers
-                                function addMarker(lat, lng, color, title) {
-                                    // var iconUrl = 'https://api.geoapify.com/v1/icon/?type=material&color=' + color + '&icon=school&iconType=awesome&apiKey=a7359783907948ed9d8572eb0c27b9bc';
-
-                                    var iconUrl = 'asset/location_'+color+'.gif'; // URL ikon kustom
-
-                                    var marker = L.marker([lat, lng], {
-                                        icon: L.icon({
-                                            iconUrl: iconUrl,
-                                            iconSize: [25, 41],
-                                            iconAnchor: [12, 41],
-                                            popupAnchor: [1, -34]
-                                        })
-                                    }).addTo(map);
-                                    marker.bindPopup("<b>" + title + "</b><br>Ini adalah " + title + ".").openPopup();
-                                }
-
-                                // Adding markers
-                                addMarker(-8.643566983708734, 116.3894582949599, 'blue', 'Ponpes Al Badriyah');
-                                addMarker(-8.64313837448071, 116.22461964093596, 'blue', 'Ponpes Darul Hukumaini');
-                              
-                                addMarker(-8.613559569350548, 116.10278282073978, 'light', 'TK Al Hikmah');
-                                addMarker(-8.646243387823581, 116.10723890368725, 'light', 'TK Ma\'rifatul Falah');
-                                addMarker(-8.571392706284083, 116.08717744044459, 'light', 'TK Al Amin');
-                                addMarker(-8.636463447391076, 116.35858466744448, 'green', 'RQ Darut Tarbiyah Pendagi');
-                                addMarker(-8.652042090267392, 116.13449680977298, 'green', 'RTQ Ibadurrahman');
-                                addMarker(-8.563031425465702, 116.14270935148556, 'green', 'TPQ Baitul Alam');
-                                addMarker(-8.560895561336583, 116.31234636691232, 'green', 'TPQ Baiturrahman Daar El Husna');
-                                addMarker(-8.570004215116553, 116.07785537827691, 'green', 'TPQ Al Mujahidin');
-                                addMarker(-8.626892216017675, 116.28439930416128, 'green', 'TPQ Baitul Quran Al Hamidy');
-                                addMarker(-8.573605968344955, 116.08651899731684, 'green', 'RQ Darull Huffadzh');
-                                addMarker(-8.57208401028988, 116.07513459944408, 'green', 'QTC Al Ikhlas');
-                                addMarker(-8.589416676793533, 116.08083092107212, 'green', 'QLC Al Ikhlas Madani');
-                                addMarker(-8.745918862707883, 116.23732400739233, 'green', 'TPQ Riyadussholihin');
-                                addMarker(-8.572618384272019, 116.09242652558562, 'green', 'TPQ Raudlatul Jannah');
-                                addMarker(-8.41741590537618, 116.15032073515377, 'green', 'TPQ Darul Ulum');
-                                addMarker(-8.57775622963425, 116.09668461863562, 'green', 'Yayasan An Najah');
-                                addMarker(-8.574435830916176, 116.54423205031404, 'red', 'SDIT Al Ulum Walhikam');
-                                addMarker(-8.660168090030675, 116.1143697005917, 'red', 'SD Nurul Falah');
-                                addMarker(-8.571076738340649, 116.08703043724061, 'red', 'MI Al Amin');
-                                addMarker(-8.697538698590748, 116.27502914046131, 'red', 'SDIT Asshofa');
-                                addMarker(-8.663558288711537, 116.12991221347635, 'red', 'SDIT Al Wildan');
-                                addMarker(-8.473872387170575, 116.04245872141001, 'red', 'MDT Babussalam');
-
-                            </script>
-
-                            <iframe style="width: 100vw;height: 5vh;position: relative;" src="" frameborder="0" allowfullscreen></iframe>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 d-flex align-items-strech">
+                    <div class="card overflow-hidden w-100 bg-danger">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <div>
+                            <h5 class="text-white card-title mb-1">SD</h5>
+                            <!--<p class="mb-0">Last 7 days</p>-->
+                          </div>
+                          <div>
+                            <h5 class="text-white mb-1 text-end">5</h5>
+                            <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
+                          </div>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="map"></div>
+                    <!-- Map container -->
+                    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                    <script>
+                      var mapOptions = {
+                        center: [-8.636208883545168, 116.35985067565763],
+                        zoom: 11, // Menentukan tingkat zoom
+                      };
+
+                      var map = L.map("map", mapOptions);
+                      var layer = new L.TileLayer(
+                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      );
+                      map.addLayer(layer);
+
+                      // Function to add markers
+                      function addMarker(lat, lng, color, title) {
+                        // var iconUrl = 'https://api.geoapify.com/v1/icon/?type=material&color=' + color + '&icon=school&iconType=awesome&apiKey=a7359783907948ed9d8572eb0c27b9bc';
+
+                        var iconUrl = "asset/location_" + color + ".gif"; // URL ikon kustom
+
+                        var marker = L.marker([lat, lng], {
+                          icon: L.icon({
+                            iconUrl: iconUrl,
+                            iconSize: [25, 41],
+                            iconAnchor: [12, 41],
+                            popupAnchor: [1, -34],
+                          }),
+                        }).addTo(map);
+                        marker
+                          .bindPopup(
+                            "<b>" + title + "</b><br>Ini adalah " + title + "."
+                          )
+                          .openPopup();
+                      }
+
+                      // Adding markers
+                      addMarker(
+                        -8.643566983708734,
+                        116.3894582949599,
+                        "blue",
+                        "Ponpes Al Badriyah"
+                      );
+                      addMarker(
+                        -8.64313837448071,
+                        116.22461964093596,
+                        "blue",
+                        "Ponpes Darul Hukumaini"
+                      );
+
+                      addMarker(
+                        -8.613559569350548,
+                        116.10278282073978,
+                        "light",
+                        "TK Al Hikmah"
+                      );
+                      addMarker(
+                        -8.646243387823581,
+                        116.10723890368725,
+                        "light",
+                        "TK Ma'rifatul Falah"
+                      );
+                      addMarker(
+                        -8.571392706284083,
+                        116.08717744044459,
+                        "light",
+                        "TK Al Amin"
+                      );
+                      addMarker(
+                        -8.636463447391076,
+                        116.35858466744448,
+                        "green",
+                        "RQ Darut Tarbiyah Pendagi"
+                      );
+                      addMarker(
+                        -8.652042090267392,
+                        116.13449680977298,
+                        "green",
+                        "RTQ Ibadurrahman"
+                      );
+                      addMarker(
+                        -8.563031425465702,
+                        116.14270935148556,
+                        "green",
+                        "TPQ Baitul Alam"
+                      );
+                      addMarker(
+                        -8.560895561336583,
+                        116.31234636691232,
+                        "green",
+                        "TPQ Baiturrahman Daar El Husna"
+                      );
+                      addMarker(
+                        -8.570004215116553,
+                        116.07785537827691,
+                        "green",
+                        "TPQ Al Mujahidin"
+                      );
+                      addMarker(
+                        -8.626892216017675,
+                        116.28439930416128,
+                        "green",
+                        "TPQ Baitul Quran Al Hamidy"
+                      );
+                      addMarker(
+                        -8.573605968344955,
+                        116.08651899731684,
+                        "green",
+                        "RQ Darull Huffadzh"
+                      );
+                      addMarker(
+                        -8.57208401028988,
+                        116.07513459944408,
+                        "green",
+                        "QTC Al Ikhlas"
+                      );
+                      addMarker(
+                        -8.589416676793533,
+                        116.08083092107212,
+                        "green",
+                        "QLC Al Ikhlas Madani"
+                      );
+                      addMarker(
+                        -8.745918862707883,
+                        116.23732400739233,
+                        "green",
+                        "TPQ Riyadussholihin"
+                      );
+                      addMarker(
+                        -8.572618384272019,
+                        116.09242652558562,
+                        "green",
+                        "TPQ Raudlatul Jannah"
+                      );
+                      addMarker(
+                        -8.41741590537618,
+                        116.15032073515377,
+                        "green",
+                        "TPQ Darul Ulum"
+                      );
+                      addMarker(
+                        -8.57775622963425,
+                        116.09668461863562,
+                        "green",
+                        "Yayasan An Najah"
+                      );
+                      addMarker(
+                        -8.574435830916176,
+                        116.54423205031404,
+                        "red",
+                        "SDIT Al Ulum Walhikam"
+                      );
+                      addMarker(
+                        -8.660168090030675,
+                        116.1143697005917,
+                        "red",
+                        "SD Nurul Falah"
+                      );
+                      addMarker(
+                        -8.571076738340649,
+                        116.08703043724061,
+                        "red",
+                        "MI Al Amin"
+                      );
+                      addMarker(
+                        -8.697538698590748,
+                        116.27502914046131,
+                        "red",
+                        "SDIT Asshofa"
+                      );
+                      addMarker(
+                        -8.663558288711537,
+                        116.12991221347635,
+                        "red",
+                        "SDIT Al Wildan"
+                      );
+                      addMarker(
+                        -8.473872387170575,
+                        116.04245872141001,
+                        "red",
+                        "MDT Babussalam"
+                      );
+                    </script>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </section>
         <section class="production py-7 py-lg-5" id="trainer">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <div class="d-sm-flex align-items-center text-center gap-2 justify-content-center mb-4 aos-init aos-animate" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                  <ul class="list-unstyled d-flex align-items-center justify-content-center justify-content-sm-start mb-2 mb-sm-0">
+                <div
+                  class="d-sm-flex align-items-center text-center gap-2 justify-content-center mb-4 aos-init aos-animate"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  <ul
+                    class="list-unstyled d-flex align-items-center justify-content-center justify-content-sm-start mb-2 mb-sm-0"
+                  >
                     <li class="">
                       <a class="d-block" href="javascript:void(0)">
-                        <img src="assets/images/profile/user-1.jpg" alt="" class="img-fluid border border-2 rounded-circle border-white" width="32" height="32">
+                        <img
+                          src="assets/images/profile/user-1.jpg"
+                          alt=""
+                          class="img-fluid border border-2 rounded-circle border-white"
+                          width="32"
+                          height="32"
+                        />
                       </a>
                     </li>
                     <li class="ms-n2">
                       <a class="d-block" href="javascript:void(0)">
-                        <img src="assets/images/profile/user-2.jpg" alt="" class="img-fluid border border-2 rounded-circle border-white" width="32" height="32">
+                        <img
+                          src="assets/images/profile/user-2.jpg"
+                          alt=""
+                          class="img-fluid border border-2 rounded-circle border-white"
+                          width="32"
+                          height="32"
+                        />
                       </a>
                     </li>
                     <li class="ms-n2">
                       <a class="d-block" href="javascript:void(0)">
-                        <img src="assets/images/profile/user-3.jpg" alt="" class="img-fluid border border-2 rounded-circle border-white" width="32" height="32">
+                        <img
+                          src="assets/images/profile/user-3.jpg"
+                          alt=""
+                          class="img-fluid border border-2 rounded-circle border-white"
+                          width="32"
+                          height="32"
+                        />
                       </a>
                     </li>
                   </ul>
@@ -344,7 +519,12 @@ html {
                     templates
                   </p> -->
                 </div>
-                <h2 class="text-center mb-0 fs-9 fw-bolder aos-init aos-animate" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                <h2
+                  class="text-center mb-0 fs-9 fw-bolder aos-init aos-animate"
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
                   Trainer Metode Ummi Mataram NTB
                 </h2>
               </div>
@@ -352,11 +532,27 @@ html {
             <div class="deshboard-templete position-relative mt-5 mb-2">
               <div class="row">
                 <div class="col-md-6 col-lg-4">
-                  <div class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                  <div
+                    class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
                     <div class="bg-light p-3 pb-0">
-                      <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
-                        <img src="assets/images/profile/user-1.jpg" alt="" class="img-fluid">
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn">Lihat Detail</a>
+                      <div
+                        class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
+                      >
+                        <img
+                          src="assets/images/profile/user-1.jpg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="btn btn-primary rounded-pill live-preview-btn"
+                          >Lihat Detail</a
+                        >
                       </div>
                     </div>
                     <div class="deshboard-templete-content p-3">
@@ -368,11 +564,27 @@ html {
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                  <div class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                  <div
+                    class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
                     <div class="bg-light p-3 pb-0">
-                      <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
-                        <img src="assets/images/profile/user-3.jpg" alt="" class="img-fluid">
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn">Lihat Detail</a>
+                      <div
+                        class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
+                      >
+                        <img
+                          src="assets/images/profile/user-3.jpg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="btn btn-primary rounded-pill live-preview-btn"
+                          >Lihat Detail</a
+                        >
                       </div>
                     </div>
                     <div class="deshboard-templete-content p-3">
@@ -384,11 +596,27 @@ html {
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                  <div class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                  <div
+                    class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
                     <div class="bg-light p-3 pb-0">
-                      <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
-                        <img src="assets/images/profile/user-4.jpg" alt="" class="img-fluid">
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn">Lihat Detail</a>
+                      <div
+                        class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
+                      >
+                        <img
+                          src="assets/images/profile/user-4.jpg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="btn btn-primary rounded-pill live-preview-btn"
+                          >Lihat Detail</a
+                        >
                       </div>
                     </div>
                     <div class="deshboard-templete-content p-3">
@@ -399,13 +627,29 @@ html {
                     </div>
                   </div>
                 </div>
-              
+
                 <div class="col-md-6 col-lg-4">
-                  <div class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                  <div
+                    class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
                     <div class="bg-light p-3 pb-0">
-                      <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
-                        <img src="assets/images/profile/user-2.jpg" alt="" class="img-fluid">
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn">Lihat Detail</a>
+                      <div
+                        class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
+                      >
+                        <img
+                          src="assets/images/profile/user-2.jpg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="btn btn-primary rounded-pill live-preview-btn"
+                          >Lihat Detail</a
+                        >
                       </div>
                     </div>
                     <div class="deshboard-templete-content p-3">
@@ -417,11 +661,27 @@ html {
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                  <div class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                  <div
+                    class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
                     <div class="bg-light p-3 pb-0">
-                      <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
-                        <img src="assets/images/profile/user-8.jpg" alt="" class="img-fluid">
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn">Lihat Detail</a>
+                      <div
+                        class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
+                      >
+                        <img
+                          src="assets/images/profile/user-8.jpg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="btn btn-primary rounded-pill live-preview-btn"
+                          >Lihat Detail</a
+                        >
                       </div>
                     </div>
                     <div class="deshboard-templete-content p-3">
@@ -433,11 +693,27 @@ html {
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                  <div class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                  <div
+                    class="deshboard-templete-items rounded-3 border position-relative overflow-hidden mb-4 aos-init aos-animate"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
                     <div class="bg-light p-3 pb-0">
-                      <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
-                        <img src="assets/images/profile/user-6.jpg" alt="" class="img-fluid">
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn">Lihat Detail</a>
+                      <div
+                        class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
+                      >
+                        <img
+                          src="assets/images/profile/user-6.jpg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                        <a
+                          href="#"
+                          target="_blank"
+                          class="btn btn-primary rounded-pill live-preview-btn"
+                          >Lihat Detail</a
+                        >
                       </div>
                     </div>
                     <div class="deshboard-templete-content p-3">
@@ -448,70 +724,86 @@ html {
                     </div>
                   </div>
                 </div>
-              
               </div>
-              
             </div>
           </div>
         </section>
-  
-    </div>
-    
-        <footer class="footer-part py-7 mt-8">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5">
-                        <div class="text-center">
-                            <p class="mb-0">All rights reserved by Spike Admin. Designed & Developed by<a target="_blank" class="text-primary text-hover-primary ms-1" href="https://github.com/Asyakri">Izaq Qiu</a></p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+
+      <footer class="footer-part py-7 mt-8">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-5">
+              <div class="text-center">
+                <p class="mb-0">
+                  All rights reserved by Spike Admin. Designed & Developed by<a
+                    target="_blank"
+                    class="text-primary text-hover-primary ms-1"
+                    href="https://github.com/Asyakri"
+                    >Izaq Qiu</a
+                  >
+                </p>
+              </div>
             </div>
-            
-        </footer>
-        <div class="offcanvas offcanvas-start modernize-lp-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header p-4">
-                <img src="assets/images/logos/logo-light.gif" alt="" class="img-fluid" width="150" />
-            </div>
-            <div class="offcanvas-body p-4">
-                <ul class="navbar-nav justify-content-end flex-grow-1">
-                  <li class="nav-item">
-                    <a class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
-                      aria-current="page"
-                      href="#trainer"
-                      >Trainer</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                    class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
-                      aria-current="page"
-                      href="#infografis"
-                      >Infografis</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                    class="d-none d-lg-block btn btn-primary fs-3 rounded btn-hover-shadow rounded-pill px-4 py-2"
-                    aria-current="page"
-                    href="https://ummifoundation.com"
-                    target="_blank">Live Help</a>
-                  </li>
-                 
-                </ul>
-            </div>
+          </div>
         </div>
-        <div class="dark-transparent sidebartoggler"></div>
-        <script src="assets/js/vendor.min.js"></script>
-        <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
-        <script src="assets/js/theme/app.init.js"></script>
-        <script src="assets/js/theme/theme.js"></script>
-        <script src="assets/js/theme/app.min.js"></script>
-        <script src="assets/js/theme/sidebarmenu.js"></script>
-        <script src="assets/js/theme/feather.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-        <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
-        <script src="assets/libs/aos/dist/aos.js"></script>
-    </body>
+      </footer>
+      <div
+        class="offcanvas offcanvas-start modernize-lp-offcanvas"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header p-4">
+          <img
+            src="assets/images/logos/logo-light.gif"
+            alt=""
+            class="img-fluid"
+            width="150"
+          />
+        </div>
+        <div class="offcanvas-body p-4">
+          <ul class="navbar-nav justify-content-end flex-grow-1">
+            <li class="nav-item">
+              <a
+                class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
+                aria-current="page"
+                href="#trainer"
+                >Trainer</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active rounded-pill d-block mb-3 mb-sm-0 scroll-link"
+                aria-current="page"
+                href="#infografis"
+                >Infografis</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="d-none d-lg-block btn btn-primary fs-3 rounded btn-hover-shadow rounded-pill px-4 py-2"
+                aria-current="page"
+                href="https://ummifoundation.com"
+                target="_blank"
+                >Live Help</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="dark-transparent sidebartoggler"></div>
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/js/theme/app.init.js"></script>
+    <script src="assets/js/theme/theme.js"></script>
+    <script src="assets/js/theme/app.min.js"></script>
+    <script src="assets/js/theme/sidebarmenu.js"></script>
+    <script src="assets/js/theme/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="assets/libs/aos/dist/aos.js"></script>
+  </body>
 </html>
