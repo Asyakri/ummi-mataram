@@ -282,7 +282,12 @@
                             <!--<p class="mb-0">Last 7 days</p>-->
                           </div>
                           <div>
-                            <h5 class="text-white mb-1 text-end">5</h5>
+                            <h5
+                              class="text-white mb-1 text-end"
+                              name="redMarkerCount"
+                            >
+                              0
+                            </h5>
                             <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
                           </div>
                         </div>
@@ -298,7 +303,13 @@
                             <!--<p class="mb-0">Last 7 days</p>-->
                           </div>
                           <div>
-                            <h5 class="text-white mb-1 text-end">20</h5>
+                            <h5
+                              class="text-white mb-1 text-end"
+                              name="greenMarkerCount"
+                            >
+                              0
+                            </h5>
+                            <!-- <h5 id="greenMarkerCount">Jumlah marker berwarna hijau: 0</h5> -->
                             <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
                           </div>
                         </div>
@@ -314,7 +325,12 @@
                             <!--<p class="mb-0">Last 7 days</p>-->
                           </div>
                           <div>
-                            <h5 class="text-white mb-1 text-end">2</h5>
+                            <h5
+                              class="text-white mb-1 text-end"
+                              name="blueMarkerCount"
+                            >
+                              0
+                            </h5>
                             <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
                           </div>
                         </div>
@@ -330,7 +346,12 @@
                             <!--<p class="mb-0">Last 7 days</p>-->
                           </div>
                           <div>
-                            <h5 class="text-white mb-1 text-end">3</h5>
+                            <h5
+                              class="text-white mb-1 text-end"
+                              name="lightMarkerCount"
+                            >
+                              0
+                            </h5>
                             <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
                           </div>
                         </div>
@@ -350,6 +371,12 @@
                         zoom: 11, // Menentukan tingkat zoom
                       };
 
+                      //count color
+                      let greenCount = 0; // Counter for green markers
+                      let redCount = 0; // Counter for green markers
+                      let lightCount = 0; // Counter for green markers
+                      let bluetCount = 0; // Counter for green markers
+
                       var map = L.map("map", mapOptions);
                       var layer = new L.TileLayer(
                         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -361,7 +388,15 @@
                         // var iconUrl = 'https://api.geoapify.com/v1/icon/?type=material&color=' + color + '&icon=school&iconType=awesome&apiKey=a7359783907948ed9d8572eb0c27b9bc';
 
                         var iconUrl = "asset/location_" + color + ".gif"; // URL ikon kustom
-
+                        if (color == "green") {
+                          greenCount++;
+                        } else if (color == "blue") {
+                          bluetCount++;
+                        } else if (color == "red") {
+                          redCount++;
+                        } else if (color == "light") {
+                          lightCount++;
+                        }
                         var marker = L.marker([lat, lng], {
                           icon: L.icon({
                             iconUrl: iconUrl,
@@ -540,6 +575,23 @@
                         116.1143697005917,
                         "red",
                         "SD Nurul Falah"
+                      );
+                      document.addEventListener(
+                        "DOMContentLoaded",
+                        function () {
+                          document.querySelector(
+                            '[name="greenMarkerCount"]'
+                          ).textContent = greenCount;
+                          document.querySelector(
+                            '[name="redMarkerCount"]'
+                          ).textContent = redCount;
+                          document.querySelector(
+                            '[name="lightMarkerCount"]'
+                          ).textContent = lightCount;
+                          document.querySelector(
+                            '[name="blueMarkerCount"]'
+                          ).textContent = bluetCount;
+                        }
                       );
                     </script>
                   </div>
