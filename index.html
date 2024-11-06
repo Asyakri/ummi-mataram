@@ -100,6 +100,19 @@
       html {
         scroll-behavior: smooth;
       }
+      .trainer-image {
+        width: 100%; /* Make the image take full width */
+        height: 350px; /* Set a fixed height */
+        object-fit: cover; /* Maintain aspect ratio and cover the area */
+        border-radius: 10px; /* Optional: add some border radius */
+      }
+
+      /* Media query for mobile devices */
+      @media (max-width: 768px) {
+        .trainer-image {
+          height: 350px; /* Adjust height for mobile */
+        }
+      }
     </style>
   </head>
 
@@ -611,7 +624,7 @@
                         <img
                           src="assets/images/profile/user-1.jpg"
                           alt=""
-                          class="img-fluid"
+                          class="img-fluid trainer-image"
                         />
                         <a
                           href="#"
@@ -643,7 +656,7 @@
                         <img
                           src="assets/images/profile/user-3.jpg"
                           alt=""
-                          class="img-fluid"
+                          class="img-fluid trainer-image"
                         />
                         <a
                           href="#"
@@ -672,7 +685,11 @@
                       <div
                         class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative"
                       >
-                        <img src="asset/muksin.jpg" alt="" class="img-fluid" />
+                        <img
+                          src="asset/muksin.jpg"
+                          alt=""
+                          class="img-fluid trainer-image"
+                        />
                         <a
                           href="#"
                           target="_blank"
@@ -704,7 +721,7 @@
                         <img
                           src="assets/images/profile/user-2.jpg"
                           alt=""
-                          class="img-fluid"
+                          class="img-fluid trainer-image"
                         />
                         <a
                           href="#"
@@ -736,7 +753,7 @@
                         <img
                           src="assets/images/profile/user-8.jpg"
                           alt=""
-                          class="img-fluid"
+                          class="img-fluid trainer-image"
                         />
                         <a
                           href="#"
@@ -768,7 +785,7 @@
                         <img
                           src="asset/zohratun.jpg"
                           alt=""
-                          class="img-fluid"
+                          class="img-fluid trainer-image"
                         />
                         <a
                           href="#"
@@ -802,7 +819,7 @@
                     target="_blank"
                     class="text-primary text-hover-primary ms-1"
                     href="https://github.com/Asyakri"
-                    >Izaq Qiu</a
+                    >Izaq Qiuqiu</a
                   >
                 </p>
               </div>
