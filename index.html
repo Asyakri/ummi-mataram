@@ -20,27 +20,27 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
-     #map {
-          height: 500px;
-          width: 100%;
-          z-index: 1; /* Lower z-index for map */
+      #map {
+        height: 500px;
+        width: 100%;
+        z-index: 1; /* Lower z-index for map */
       }
-  
+
       .header {
-          position: sticky;
-          z-index: 1000;
-          background-color: white;
-           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
-  
+
       .navbar {
-          position: relative;
-          z-index: 1000; /* Higher z-index for navbar */
+        position: relative;
+        z-index: 1000; /* Higher z-index for navbar */
       }
-  
+
       /* Add this to ensure dropdown menus appear above map */
       .dropdown-menu {
-          z-index: 1001;
+        z-index: 1001;
       }
       /* CSS yang sudah ada */
 
@@ -95,19 +95,19 @@
       html {
         scroll-behavior: smooth;
       }
-     .trainer-image {
-    width: 100%; /* Make the image take full width */
-    height: 325px; /* Set a fixed height */
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
-    border-radius: 10px; /* Optional: add some border radius */
-  }
+      .trainer-image {
+        width: 100%; /* Make the image take full width */
+        height: 325px; /* Set a fixed height */
+        object-fit: cover; /* Maintain aspect ratio and cover the area */
+        border-radius: 10px; /* Optional: add some border radius */
+      }
 
-  /* Media query for mobile devices */
-  @media (max-width: 768px) {
-    .trainer-image {
-      height: 325px; /* Adjust height for mobile */
-    }
-  }
+      /* Media query for mobile devices */
+      @media (max-width: 768px) {
+        .trainer-image {
+          height: 325px; /* Adjust height for mobile */
+        }
+      }
     </style>
   </head>
 
@@ -153,7 +153,8 @@
                 </li>
               </ul>
             </div>
-            <a class="d-none d-lg-block btn btn-primary fs-3 rounded btn-hover-shadow rounded-pill px-4 py-2"
+            <a
+              class="d-none d-lg-block btn btn-primary fs-3 rounded btn-hover-shadow rounded-pill px-4 py-2"
               href="https://ummifoundation.com"
               target="_blank"
               >Live Help</a
@@ -254,7 +255,7 @@
                       </div>
                     </div>
                   </div>
-                   <div class="col-sm-4 d-flex align-items-strech">
+                  <div class="col-sm-4 d-flex align-items-strech">
                     <div class="card overflow-hidden w-100 bg-success">
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
@@ -264,14 +265,14 @@
                           </div>
                           <div>
                             <h5 class="text-white mb-1 text-end" name="greenMarkerCount">0</h5>
-                             <!-- <h5 id="greenMarkerCount">Jumlah marker berwarna hijau: 0</h5> -->
+                            <!-- <h5 id="greenMarkerCount">Jumlah marker berwarna hijau: 0</h5> -->
                             <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                   <div class="col-sm-4 d-flex align-items-strech">
+                  <div class="col-sm-4 d-flex align-items-strech">
                     <div class="card overflow-hidden w-100 bg-indigo">
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
@@ -303,13 +304,10 @@
                       </div>
                     </div>
                   </div>
-                  
                 </div>
 
                 <div class="row">
                   <div class="col-md-12">
-                  
-
                     <div id="map"></div>
                     <!-- Map container -->
                     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -324,7 +322,7 @@
                       let redCount = 0; // Counter for green markers
                       let lightCount = 0; // Counter for green markers
                       let bluetCount = 0; // Counter for green markers
-                      
+
                       var map = L.map("map", mapOptions);
                       var layer = new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
                       map.addLayer(layer);
@@ -334,14 +332,13 @@
                         // var iconUrl = 'https://api.geoapify.com/v1/icon/?type=material&color=' + color + '&icon=school&iconType=awesome&apiKey=a7359783907948ed9d8572eb0c27b9bc';
 
                         var iconUrl = "asset/location_" + color + ".gif"; // URL ikon kustom
-                        if (color=='green') {
+                        if (color == "green") {
                           greenCount++;
-                        }else
-                        if (color == 'blue') {
+                        } else if (color == "blue") {
                           bluetCount++;
-                        } else if(color == 'red'){
+                        } else if (color == "red") {
                           redCount++;
-                        }else if(color == 'light'){
+                        } else if (color == "light") {
                           lightCount++;
                         }
                         var marker = L.marker([lat, lng], {
@@ -353,12 +350,10 @@
                           })
                         }).addTo(map);
                         marker.bindPopup("<b>" + title + "</b><br>Ini adalah " + title + ".").openPopup();
-                      
                       }
 
-                      
                       // Adding markers
-                      addMarker(-8.643566983708734, 116.3894582949599, "blue", "Ponpes Al Badriyah");
+                      addMarker(-8.646097579301353, 116.39053719677092, "blue", "Ponpes Al Badriyah");
                       addMarker(-8.64313837448071, 116.22461964093596, "blue", "Ponpes Darul Hukumaini");
 
                       addMarker(-8.613559569350548, 116.10278282073978, "light", "TK Al Hikmah");
@@ -366,6 +361,7 @@
                       addMarker(-8.571392706284083, 116.08717744044459, "light", "TK Al Amin");
                       addMarker(-8.636463447391076, 116.35858466744448, "green", "RQ Darut Tarbiyah Pendagi");
                       addMarker(-8.652042090267392, 116.13449680977298, "green", "RTQ Ibadurrahman");
+                      addMarker(-8.645721033783481, 116.39026897587219, "green", "TPQ Cerdas Al Badriyah");
                       addMarker(-8.629332456882562, 116.36599135394432, "green", "BQ Azzahroh");
                       addMarker(-8.60998962670024, 116.09697338426128, "green", "TPQ Darul Aulia");
                       addMarker(-8.563031425465702, 116.14270935148556, "green", "TPQ Baitul Alam");
@@ -387,14 +383,13 @@
                       addMarker(-8.663558288711537, 116.12991221347635, "red", "SDIT Al Wildan");
                       addMarker(-8.473872387170575, 116.04245872141001, "red", "MDT Babussalam");
                       addMarker(-8.660168090030675, 116.1143697005917, "red", "SD Nurul Falah");
-                        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector('[name="greenMarkerCount"]').textContent =  greenCount;
-            document.querySelector('[name="redMarkerCount"]').textContent =  redCount;
-            document.querySelector('[name="lightMarkerCount"]').textContent = lightCount;
-            document.querySelector('[name="blueMarkerCount"]').textContent =  bluetCount;
-        });
+                      document.addEventListener("DOMContentLoaded", function () {
+                        document.querySelector('[name="greenMarkerCount"]').textContent = greenCount;
+                        document.querySelector('[name="redMarkerCount"]').textContent = redCount;
+                        document.querySelector('[name="lightMarkerCount"]').textContent = lightCount;
+                        document.querySelector('[name="blueMarkerCount"]').textContent = bluetCount;
+                      });
                     </script>
-
                   </div>
                 </div>
               </div>
@@ -579,7 +574,7 @@
                     <div class="bg-light p-3 pb-0">
                       <div class="deshboard-templete-img rounded-top-2 overflow-hidden position-relative">
                         <img src="asset/zohratun.jpg" alt="" class="img-fluid trainer-image" />
-                        <a href="#" target="_blank" class="btn btn-primary rounded-pill  live-preview-btn"
+                        <a href="#" target="_blank" class="btn btn-primary rounded-pill live-preview-btn"
                           >Lihat Detail</a
                         >
                       </div>
@@ -616,7 +611,11 @@
           </div>
         </div>
       </footer>
-      <div class="offcanvas offcanvas-start modernize-lp-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div
+        class="offcanvas offcanvas-start modernize-lp-offcanvas"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header p-4">
           <img src="assets/images/logos/logo-light.gif" alt="" class="img-fluid" width="150" />
         </div>
