@@ -232,7 +232,88 @@
             </div>
           </div>
         </section>
+  <!-- Start Section Statistik-->
+  <section class="production py-7 py-lg-5" id="statistik">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2
+            class="text-center mb-0 fs-9 fw-bolder aos-init aos-animate"
+            data-aos="fade-right"
+            data-aos-delay="200"
+            data-aos-duration="1000">
+            Statistik Ummi Mataram
+          </h2>
+        </div>
+      </div>
+      <!-- chart Start   -->
+      <div class="deshboard-templete position-relative mt-5 mb-2">
+        <div class="row">
+          <div id="chart" style="min-height: 365px" class=""></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 d-flex align-items-stretch">
+            <div class="card overflow-hidden w-100 bg-info">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5 class="text-white card-title mb-1 d-flex align-items-center">
+                      <i class="fa fa-school me-2"></i> Kabupaten
+                    </h5>
+                    <!--<p class="mb-0">Last 7 days</p>-->
+                  </div>
+                  <div>
+                    <h5 class="text-white mb-1 text-end" name="lightMarkerCount">6</h5>
+                    <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 d-flex align-items-stretch">
+            <div class="card overflow-hidden w-100 bg-success">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5 class="text-white card-title mb-1 d-flex align-items-center">
+                      <i class="fa fa-users me-2"></i> Guru
+                    </h5>
+                    <!--<p class="mb-0">Last 7 days</p>-->
+                  </div>
+                  <div>
+                    <h5 class="text-white mb-1 text-end" name="lightMarkerCount">349</h5>
+                    <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 d-flex align-items-stretch">
+            <div class="card overflow-hidden w-100 bg-warning">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h5 class="text-white card-title mb-1 d-flex align-items-center">
+                      <i class="fa fa-graduation-cap me-2"></i> Santri
+                    </h5>
+                    <!--<p class="mb-0">Last 7 days</p>-->
+                  </div>
+                  <div>
+                    <h5 class="text-white mb-1 text-end" name="lightMarkerCount">4496</h5>
+                    <!--<span class="badge rounded-pill bg-warning-subtle text-warning border-warning border text-end">-3.8%</span>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- chart End   -->
+    </div>
+  </section>
+
+  <!-- End Section Statistik -->
         <section class="hero-section bg-body-secondary position-relative overflow-hidden" id="infografis">
           <div class="container">
             <h2
@@ -671,5 +752,38 @@
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
     <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
     <script src="assets/libs/aos/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="assets/js/apex-chart/apex.bar.init.js"></script>
+
+    <script>
+      var options = {
+        series: [
+          {
+            data: [25, 32, 45]
+          }
+        ],
+        chart: {
+          type: "bar",
+          height: 350
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            borderRadiusApplication: "end",
+            horizontal: true
+          }
+        },
+        dataLabels: {
+          enabled: true
+        },
+        xaxis: {
+          categories: ["2022", "2023", "2024"]
+        }
+      };
+
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
+    </script>
   </body>
 </html>
