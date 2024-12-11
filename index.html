@@ -261,6 +261,9 @@
               <div class="row">
                 <div id="chartSantri" style="min-height: 365px" class=""></div>
               </div>
+               <div class="row">
+                <div id="chartLembaga" style="min-height: 365px" class=""></div>
+              </div>
               <div class="row">
                 <div class="col-sm-4 d-flex align-items-stretch">
                   <div class="card overflow-hidden w-100 bg-info">
@@ -879,6 +882,43 @@
       };
 
       var chart = new ApexCharts(document.querySelector("#chartSantri"), optionSantri);
+      chart.render();
+    </script>
+     <script>
+      var optionLembaga = {
+        series: [
+          {
+            data: [20, 32, 45]
+          }
+        ],
+        chart: {
+          type: "bar",
+          height: 350
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            borderRadiusApplication: "end",
+            horizontal: true
+          }
+        },
+        dataLabels: {
+          enabled: true
+        },
+        xaxis: {
+          categories: ["2022", "2023", "2024"]
+        },
+        title: {
+          text: "Data Statistik Lembaga - Metode Ummi",
+          align: "center",
+          style: {
+            fontSize: "18px",
+            fontWeight: "bold"
+          }
+        }
+      };
+
+      var chart = new ApexCharts(document.querySelector("#chartLembaga"), optionLembaga);
       chart.render();
     </script>
   </body>
